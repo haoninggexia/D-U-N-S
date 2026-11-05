@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>苹果开发者企业账号 DUNS 编码被驳回？常见原因逐条排查</title>
+  <meta name="description" content="苹果开发者企业账号提示 DUNS 编码无法验证？整理名称不一致、地址不符、主体类型不符、编码未同步、错用他人编码等常见原因与对应处理步骤。" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://haoninggexia.github.io/D-U-N-S/guides/pingguo-kaifazhe-duns.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="D-U-N-S Helper" />
+  <meta property="og:title" content="苹果开发者企业账号 DUNS 编码被驳回？常见原因逐条排查" />
+  <meta property="og:description" content="苹果开发者企业账号提示 DUNS 编码无法验证？整理名称不一致、地址不符、主体类型不符、编码未同步、错用他人编码等常见原因与对应处理步骤。" />
+  <meta property="og:url" content="https://haoninggexia.github.io/D-U-N-S/guides/pingguo-kaifazhe-duns.html" />
+  <meta property="og:image" content="https://haoninggexia.github.io/D-U-N-S/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="苹果开发者企业账号 DUNS 编码被驳回？常见原因逐条排查" />
+  <meta name="twitter:description" content="苹果开发者企业账号提示 DUNS 编码无法验证？整理名称不一致、地址不符、主体类型不符、编码未同步、错用他人编码等常见原因与对应处理步骤。" />
+  <meta name="twitter:image" content="https://haoninggexia.github.io/D-U-N-S/og-image.png" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="../article.css" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "苹果提示 DUNS 无法验证，是不是编码错了？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多数情况下是法定名称或注册地址与 D&B 档案不一致，而不是九位数字填错。应以档案内容为准修改苹果表单。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "个人开发者需要 DUNS 编码吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。只有以组织（公司、教育机构）身份加入 Apple Developer Program 才需要。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以用总公司或分公司的 DUNS 吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不可以。DUNS 对应特定地址上的特定法人实体，苹果要求使用为其法人实体注册的编号，且不接受分公司注册。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "刚拿到的编码为什么苹果查不到？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "新建记录需要时间同步到苹果可读取的数据库。等待后再提交，不要重复申请。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "被驳回后应该立刻重新申请编码吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不建议。重复申请可能冻结流程或产生冲突记录。先核对已有档案与表单字段是否一致。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "苹果审核还要多久？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "苹果的主体审核独立于邓白氏流程。拿到编码后还要预留苹果自己的审核时间，且官方说明加急创建流程不会缩短其等待时间。"
+      }
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://haoninggexia.github.io/D-U-N-S/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://haoninggexia.github.io/D-U-N-S/#guides"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "苹果 DUNS 驳回排查",
+      "item": "https://haoninggexia.github.io/D-U-N-S/guides/pingguo-kaifazhe-duns.html"
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html">D&#8209;U&#8209;N&#8209;S<span>Helper</span></a>
+      <nav class="nav">
+        <a href="../index.html#compare">时效对比</a>
+        <a href="../index.html#guides">专题指南</a>
+        <a href="../index.html#pricing">费用</a>
+        <a class="lang-switch" href="../zh.html">English</a>
+        <a class="nav-cta" href="../index.html?utm_source=guide_pingguo-kaifazhe-duns&utm_medium=internal#contact">免费预检</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container article-wrap">
+    <div class="breadcrumb"><a href="../index.html">首页</a><span>&rsaquo;</span><a href="../index.html#guides">专题指南</a><span>&rsaquo;</span>苹果 DUNS 驳回排查</div>
+
+    <article class="article">
+      <header class="article-head">
+        <h1>苹果开发者企业账号 DUNS 被驳回？逐条排查</h1>
+        <p class="article-lead">「Unable to verify」不一定是你的编码错了。苹果校验的是法人实体名称、地址、主体类型与 D&amp;B 档案是否逐字一致。下面按现象给排查顺序。</p>
+        <p class="article-meta">D-U-N-S Helper &middot; 更新于 2026 年 11 月 &middot; 6 分钟阅读</p>
+      </header>
+
+
+<h2>苹果到底在校验什么</h2>
+<p>以企业身份加入 Apple Developer Program 时，苹果要用 D-U-N-S 编号去邓白氏（D&amp;B）数据库确认：签协议的是一个真实存在的<strong>法人实体</strong>。编号本身由 D&amp;B 分配和维护，苹果只是读取比对。所以「编号正确但被驳回」几乎总是<strong>档案信息不一致</strong>，而不是九位数字写错了。</p>
+<p>苹果还明确了主体资格：个人开发者不需要 DUNS；企业和教育机构必须提供其法人实体对应的编码；<strong>DBA、虚构商号、商号和分公司不被接受</strong>；政府组织可选择不提供。</p>
+
+<h2>按现象排查</h2>
+<div class="table-scroll"><table>
+<thead><tr><th>现象</th><th>最可能的原因</th><th>处理</th></tr></thead>
+<tbody>
+<tr><td>提示 Unable to verify / 无法验证</td><td>法定名称或地址与 D&amp;B 档案不一致</td><td>以 D&amp;B 档案里的写法为准，回头改苹果表单，而不是反复改编码</td></tr>
+<tr><td>编码查得到，但苹果说无效</td><td>记录刚创建尚未同步，或档案被标记为非活跃</td><td>等待同步后再提交一次；不要重复申请新编码</td></tr>
+<tr><td>系统显示的是另一家相似公司</td><td>英文名译法、历史名称或拼音导致匹配错误</td><td>用完整法定名称 + 地址 + 电话反查，确认统一社会信用代码对应的主体</td></tr>
+<tr><td>用总公司编码提交子公司申请</td><td>主体不符</td><td>改用申请主体自己的编码；每个地址 / 法人实体对应自己的 DUNS</td></tr>
+<tr><td>个体工商户 / 分公司被拒</td><td>主体类型不符合苹果要求</td><td>改用符合条件的法人实体，或改注册个人开发者账号</td></tr>
+<tr><td>申请长期无进展</td><td>漏接邓白氏核验电话、营业执照未补充、重复提交导致冻结</td><td>保持电话畅通，补齐注册文件，避免同一主体并行多份申请</td></tr>
+</tbody></table></div>
+
+<h2>三步定位法</h2>
+<ol>
+<li><strong>先定主体。</strong>确认申请主体是法人实体，且不是 DBA / 分公司。这一步不成立，后面全白做。</li>
+<li><strong>再定档案。</strong>查 D&amp;B 里是否存在该主体的记录，逐字抄下法定英文名、街道地址、省市、邮编和电话。</li>
+<li><strong>最后对齐表单。</strong>把苹果后台的 Legal Entity Name 与 Address 改成与档案完全一致，并检查联系人电话可接通。</li>
+</ol>
+<div class="callout"><p>顺序很重要：很多人一被驳回就重新申请编码，结果产生重复请求、档案更乱。<strong>先把「已有档案」读出来，再去改表单。</strong></p></div>
+
+<h2>时间线要分开算</h2>
+<p>拿到编码 ≠ 账号开通。邓白氏下发编码可能需要约 5 个工作日（苹果通道）或更久；新记录还需要同步时间；苹果随后再做一次独立的人工审核。苹果中文支持页还特别说明：对 D-U-N-S 创建流程做加急，并不会缩短其等待时间。排期时给三段各留缓冲，别把上架日压在最后一天。</p>
+
+<h2>提交前最后核对清单</h2>
+<ul>
+<li>法定名称：与营业执照及 D&amp;B 档案完全一致，英文译法固定一种</li>
+<li>地址：精确到门牌号，含省市邮编，与登记一致</li>
+<li>主体类型：法人实体，非个人 / DBA / 分公司</li>
+<li>编码：属于本主体、本地址，且状态有效</li>
+<li>联系人：企业邮箱 + 工作时间内可接通的电话</li>
+<li>营业执照扫描件：清晰、在有效期内，随时可补</li>
+<li>不重复提交：上一份申请未结案前不再开新申请</li>
+</ul>
+<p class="source-list">官方参考：<a href="https://developer.apple.com/cn/support/D-U-N-S/" target="_blank" rel="nofollow noopener">Apple 开发者 — D-U-N-S 编号（中文）</a> · <a href="https://developer.apple.com/support/D-U-N-S/" target="_blank" rel="nofollow noopener">Apple Developer — D-U-N-S Number</a></p>
+
+
+      <div class="article-cta">
+        <h2>卡在苹果审核这一步？</h2>
+        <p>发来公司法定名称、注册地址和所在国家，我们先核对 D&amp;B 档案与苹果表单是否一致，并确认真实时效。</p>
+        <a class="btn btn-primary" href="../index.html?utm_source=guide_pingguo-kaifazhe-duns&utm_medium=internal#contact">帮我排查 &rarr;</a>
+      </div>
+
+      <section class="article-faq">
+        <h2>常见问题</h2>
+        <div class="faq-list">
+          <details><summary>苹果提示 DUNS 无法验证，是不是编码错了？</summary><p>多数情况下是法定名称或注册地址与 D&amp;B 档案不一致，而不是九位数字填错。应以档案内容为准修改苹果表单。</p></details>
+          <details><summary>个人开发者需要 DUNS 编码吗？</summary><p>不需要。只有以组织（公司、教育机构）身份加入 Apple Developer Program 才需要。</p></details>
+          <details><summary>可以用总公司或分公司的 DUNS 吗？</summary><p>不可以。DUNS 对应特定地址上的特定法人实体，苹果要求使用为其法人实体注册的编号，且不接受分公司注册。</p></details>
+          <details><summary>刚拿到的编码为什么苹果查不到？</summary><p>新建记录需要时间同步到苹果可读取的数据库。等待后再提交，不要重复申请。</p></details>
+          <details><summary>被驳回后应该立刻重新申请编码吗？</summary><p>不建议。重复申请可能冻结流程或产生冲突记录。先核对已有档案与表单字段是否一致。</p></details>
+          <details><summary>苹果审核还要多久？</summary><p>苹果的主体审核独立于邓白氏流程。拿到编码后还要预留苹果自己的审核时间，且官方说明加急创建流程不会缩短其等待时间。</p></details>
+        </div>
+      </section>
+
+      <section class="related">
+        <h2>相关指南</h2>
+        <ul>
+          <li><a href="apple-developer-duns.html">D-U-N-S Number for Apple Developer Program</a></li>
+          <li><a href="duns-number-fast.html">How to get a D-U-N-S Number fast — 4 routes compared</a></li>
+          <li><a href="duns-lookup.html">Find your existing D-U-N-S Number (free lookup)</a></li>
+          <li><a href="google-play-duns.html">D-U-N-S Number for Google Play</a></li>
+          <li><a href="duns-bianhao-jiaji.html">邓白氏编码加急要多久？</a></li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="brand">D&#8209;U&#8209;N&#8209;S<span>Helper</span></div>
+        <p class="footer-note">Independent assistance service for D-U-N-S Number lookup and applications. Not affiliated with Dun &amp; Bradstreet, Apple or Google.</p>
+        <p class="footer-links"><a href="../index.html">Home</a> · <a href="../zh.html">中文页面</a> · <a href="../index.html#compliance">Disclosure</a></p>
+      </div>
+      <div class="footer-contact">
+        <p>Get in touch:</p>
+        <a class="tg-link" href="https://t.me/haoninggexia" target="_blank" rel="noopener">t.me/haoninggexia</a>
+        <p class="tg-phone-footer">+86 189 5314 7694 (Telegram)</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>&copy; <span id="year"></span> D-U-N-S Helper. All rights reserved.</span>
+      <span><a href="../index.html#compliance">Disclosure</a></span>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

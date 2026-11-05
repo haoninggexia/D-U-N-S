@@ -253,7 +253,76 @@ details p { margin: 0 0 16px; color: var(--muted); }
 .footer-contact .tg-link { color: var(--accent); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.12); margin-top: 30px; padding-top: 16px; color: #8aa0bd; font-size: 0.85rem; }
 
+/* ---- v2: positioning, comparison, lead form, guides, disclosure ---- */
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #9dc7ff;
+  border: 1px solid rgba(157, 199, 255, 0.35);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+}
+.hero .lead strong { color: #fff; }
+.lang-switch { color: var(--blue) !important; }
+
+.table-wrap { overflow-x: auto; max-width: 900px; margin: 0 auto; border-radius: var(--radius); box-shadow: var(--shadow); }
+.compare-table { width: 100%; border-collapse: collapse; background: var(--white); font-size: 0.95rem; }
+.compare-table th, .compare-table td { padding: 15px 18px; text-align: left; border-bottom: 1px solid #e8eef7; }
+.compare-table thead th { background: var(--navy); color: #fff; font-weight: 700; }
+.compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-table .cell-slow { color: #b45309; font-weight: 700; white-space: nowrap; }
+.compare-table .cell-fast { color: #15803d; font-weight: 800; white-space: nowrap; }
+.compare-table .row-us { background: #eaf5ff; }
+.compare-table .row-us td { border-top: 2px solid var(--blue-light); }
+.table-note { max-width: 900px; margin: 16px auto 0; font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+.table-note.center { text-align: center; margin-top: 20px; }
+.table-note a { color: var(--blue); }
+.section-intro-tight { margin-top: 32px; margin-bottom: 0; }
+
+/* Lead form */
+.lead-form { text-align: left; margin: 0 0 16px; }
+.lead-form label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+.lead-form input, .lead-form select {
+  display: block; width: 100%; margin-top: 5px; padding: 10px 12px;
+  border: 1px solid #d7e1ee; border-radius: 9px; font: inherit; font-size: 0.9rem;
+  color: var(--text); background: #fbfdff; box-sizing: border-box;
+}
+.lead-form input:focus, .lead-form select:focus { outline: 2px solid var(--blue-light); border-color: transparent; }
+.hero-card .qr-wrap { margin-top: 14px; margin-bottom: 10px; }
+.qr-caption { display: block; font-size: 0.85rem; color: var(--muted); }
+.extra-contacts { font-size: 0.88rem; color: var(--muted); margin: 0 0 12px; }
+.extra-contacts a { color: var(--blue); font-weight: 700; }
+.extra-contacts p { margin: 4px 0; }
+
+/* Guides grid */
+.guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; max-width: 1000px; margin: 0 auto; }
+.guide-link {
+  display: block; background: var(--white); border-radius: 12px; padding: 20px 22px;
+  box-shadow: 0 4px 14px rgba(11,31,58,0.06); border-left: 4px solid var(--blue-light);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.guide-link:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+.guide-link strong { display: block; color: var(--navy); font-size: 1.02rem; margin-bottom: 5px; }
+.guide-link span { display: block; color: var(--muted); font-size: 0.88rem; }
+
+/* Disclosure */
+.compliance { padding: 56px 0; }
+.compliance-box { max-width: 860px; margin: 0 auto; background: #fff; border-radius: var(--radius); padding: 28px 30px; border: 1px solid #dde7f3; color: var(--muted); font-size: 0.92rem; }
+.compliance-box p { margin: 0 0 14px; }
+.compliance-box p:last-child { margin-bottom: 0; }
+.compliance-box strong { color: var(--navy); }
+.footer-links { color: #9fb3cd; font-size: 0.85rem; margin-top: 14px; }
+.footer-links a { color: #b9d3f2; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.footer-bottom a { color: #b9d3f2; }
+
 @media (max-width: 860px) {
   .hero-inner { grid-template-columns: 1fr; }
   .nav { display: none; }
+  .compare-table th, .compare-table td { padding: 12px 10px; font-size: 0.85rem; }
+  .footer-bottom { flex-direction: column; }
 }

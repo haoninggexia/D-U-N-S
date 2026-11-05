@@ -1,0 +1,49 @@
+/* Shared styles for guide / article pages */
+.article-wrap { max-width: 820px; margin: 0 auto; padding: 0 0 20px; }
+.breadcrumb { font-size: 0.86rem; color: var(--muted); margin: 26px 0 18px; }
+.breadcrumb a { color: var(--blue); }
+.breadcrumb span { margin: 0 8px; color: #a9b6c8; }
+
+.article-head { border-bottom: 1px solid #e2eaf5; padding-bottom: 26px; margin-bottom: 34px; }
+.article-head h1 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); line-height: 1.25; color: var(--navy); margin: 0 0 14px; }
+.article-lead { font-size: 1.12rem; color: var(--muted); margin: 0; }
+.article-meta { font-size: 0.84rem; color: #8493a7; margin-top: 16px; }
+
+.article h2 { font-size: 1.5rem; color: var(--navy); margin: 44px 0 12px; padding-top: 8px; }
+.article h3 { font-size: 1.14rem; color: var(--navy); margin: 26px 0 8px; }
+.article p { color: #374151; margin: 0 0 16px; }
+.article ul, .article ol { color: #374151; padding-left: 22px; margin: 0 0 18px; }
+.article li { margin-bottom: 8px; }
+.article a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+.article strong { color: var(--navy); }
+.article table { width: 100%; border-collapse: collapse; margin: 18px 0 24px; font-size: 0.93rem; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 14px rgba(11,31,58,.06); }
+.article th, .article td { padding: 12px 14px; border-bottom: 1px solid #e8eef7; text-align: left; vertical-align: top; }
+.article thead th { background: var(--navy); color: #fff; }
+.article tbody tr:last-child td { border-bottom: none; }
+.table-scroll { overflow-x: auto; }
+
+.callout { background: #eaf5ff; border-left: 4px solid var(--blue-light); border-radius: 10px; padding: 18px 22px; margin: 24px 0; }
+.callout p { margin: 0 0 8px; color: #274567; font-size: 0.95rem; }
+.callout p:last-child { margin: 0; }
+.warn { background: #fff7ed; border-left-color: #f59e0b; }
+.warn p { color: #7c4a12; }
+
+.article-cta { background: linear-gradient(120deg, var(--navy), #16417c); color: #fff; border-radius: var(--radius); padding: 34px 30px; margin: 46px 0; text-align: center; }
+.article-cta h2 { color: #fff; margin: 0 0 10px; padding: 0; font-size: 1.55rem; }
+.article-cta p { color: #cdddf0; margin: 0 0 20px; }
+.article-cta .btn-primary { background: linear-gradient(90deg, #38bdf8, #2563eb); }
+
+.article-faq { margin-top: 44px; }
+.article-faq h2 { margin-top: 0; }
+.related { margin: 46px 0 0; padding-top: 26px; border-top: 1px solid #e2eaf5; }
+.related h2 { margin-top: 0; font-size: 1.25rem; }
+.related ul { list-style: none; padding: 0; }
+.related li { margin-bottom: 10px; }
+
+.source-list { font-size: 0.86rem; color: var(--muted); }
+.source-list li { margin-bottom: 5px; }
+
+@media (max-width: 860px) {
+  .article-head h1 { font-size: 1.8rem; }
+  .article-cta { padding: 28px 20px; }
+}

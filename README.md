@@ -1,60 +1,97 @@
-# D-U-N-S Helper — Landing Site
+# D-U-N-S Helper — landing site
 
-A single-page website to promote your D-U-N-S Number application assistance service,
-with a Telegram QR code on the index page so visitors can contact you directly.
+Static site promoting an independent D-U-N-S Number lookup / application
+assistance service. Deployed on GitHub Pages at
+`https://haoninggexia.github.io/D-U-N-S/`.
 
-## Files
-- `index.html` — the page (content + layout)
-- `styles.css` — styling
-- `script.js` — Telegram QR code generation and config
+## Pages
 
-## Set up your Telegram QR code
-Open `script.js` and change the first line:
+| File | Purpose | Language |
+| --- | --- | --- |
+| `index.html` | Main landing page (English) | en |
+| `zh.html` | Main landing page (Chinese) | zh-CN |
+| `guides/apple-developer-duns.html` | DUNS for Apple Developer enrollment | en |
+| `guides/duns-number-fast.html` | "How to get DUNS fast" route comparison | en |
+| `guides/duns-lookup.html` | Find an existing DUNS number | en |
+| `guides/google-play-duns.html` | DUNS for Google Play organization accounts | en |
+| `guides/duns-bianhao-jiaji.html` | 邓白氏编码加急时效对比 | zh-CN |
+| `guides/pingguo-kaifazhe-duns.html` | 苹果企业账号 DUNS 驳回排查 | zh-CN |
+
+Each guide targets one distinct search intent and links back to the landing
+pages with a UTM-tagged CTA, so enquiries carry their acquisition source.
+
+## Config — contacts
+
+Open `script.js` and edit the CONFIG block at the top:
 
 ```js
-const TELEGRAM_USERNAME = "your_telegram_username";
+const TELEGRAM_USERNAME = "haoninggexia";
+const CONTACT_EMAIL = "";   // e.g. "hello@example.com"
+const WECHAT_ID = "";       // e.g. "duns_helper"
+const QQ_NUMBER = "";       // e.g. "123456789"
 ```
 
-Replace `your_telegram_username` with your real Telegram username **without** the `@`.
-For example, if your link is `https://t.me/duns_helper`, use `"duns_helper"`.
+Empty values are simply not rendered. **Add a WeChat ID or an email address if
+you want Chinese leads to convert** — Telegram alone loses most of them.
+The lead form also offers a "copy the message" button that works without any
+backend, so a static site can still capture enquiries.
 
-The site will then:
-- Show a scannable QR code linking to `https://t.me/<your_username>`
-- Display the link as text and a "Copy" button
-- Point the header/footer links to your Telegram
+## Source attribution
+
+Any link into the site may carry `?utm_source=...` (or `?ref=...`). The first
+value is stored in `sessionStorage` and appended to the enquiry message, and
+all Telegram links get a pre-filled opener. Example:
+
+```
+https://haoninggexia.github.io/D-U-N-S/?utm_source=zhihu&utm_medium=answer
+```
+
+Use a different `utm_source` per channel to see which ones actually produce
+leads. No analytics backend is required.
+
+## Regenerating guide pages
+
+```bash
+python build_pages.py
+```
+
+`build_pages.py` holds the shared HTML template plus the content of all six
+guides. To add a keyword page: copy an entry in `PAGES`, change the file name,
+title, description, body and FAQ, re-run the script, then add the URL to
+`sitemap.xml`. Generated HTML is committed, so GitHub Pages does not need a
+build step.
 
 ## Run locally
-Just open `index.html` in a browser, or serve the folder:
 
 ```bash
 python -m http.server 8000
-# then visit http://localhost:8000
+# http://localhost:8000  and  http://localhost:8000/zh.html
 ```
 
-## Deploy (list on Google)
-Upload the files to any static host (GitHub Pages, Netlify, Vercel, Cloudflare Pages, or your own server).
+## SEO assets
 
-### SEO assets included
-- `index.html` — enriched meta tags (canonical, robots, bilingual keywords,
-  Open Graph, Twitter Card, hreflang) plus JSON-LD structured data
-  (`ProfessionalService` + `FAQPage`) for rich search results.
-- `robots.txt` — allows crawling and points to the sitemap.
-- `sitemap.xml` — declares the page and its language alternates.
-- `og-image.png` — 1200×630 branded social-share image.
+- `index.html` / `zh.html` — canonical + reciprocal hreflang, Open Graph,
+  Twitter Card, `ProfessionalService` and `FAQPage` JSON-LD. FAQ JSON-LD
+  matches the visible FAQ exactly (Google requires this).
+- `guides/*.html` — `FAQPage` + `BreadcrumbList` JSON-LD, internal cross-links.
+- `robots.txt`, `sitemap.xml` — 8 URLs, update `lastmod` when pages change.
+- `og-image.png` — 1200x630 share image.
+- Google site verification meta tag is already present in both landing pages.
 
-### Get indexed faster (do this after every deploy)
-1. Go to [Google Search Console](https://search.google.com/search-console).
-2. Add the property `https://haoninggexia.github.io/D-U-N-S/` (URL-prefix).
-3. Verify ownership (HTML file or meta-tag method).
-4. In **Sitemaps**, submit: `sitemap.xml`.
-5. In **URL Inspection**, paste the page URL and click **Request indexing**.
-6. Optional but recommended: also submit the sitemap to
-   [Bing Webmaster Tools](https://www.bing.com/webmasters) (powers Yahoo/Bing
-   and is reused by many engines).
+### After every deploy
 
-Tip: keep `og:image`, `canonical`, and the `sitemap.xml` URLs in sync with the
-real domain if you later move off GitHub Pages.
+1. Google Search Console → URL Inspection → paste the URL → **Request indexing**
+   for `index.html`, `zh.html` and each new guide.
+2. Search Console → **Sitemaps** → resubmit `sitemap.xml`.
+3. Bing Webmaster Tools → submit the same sitemap (feeds Bing / Yahoo and is
+   reused by several other engines).
+4. Baidu 资源搜索平台 → 普通收录 → 手动提交中文页面 URLs (GitHub Pages is
+   reachable but Baidu indexing is slow; Chinese Q&A backlinks help more).
 
-## Notes
-- The QR code is generated in the browser using the `qrcodejs` CDN library (needs internet).
-- This is an assistance service and is not affiliated with Dun & Bradstreet.
+## Disclosure
+
+Independent third-party assistance service. Not affiliated with, endorsed by,
+or acting on behalf of Dun & Bradstreet, Apple or Google. D-U-N-S is a
+registered trademark of Dun & Bradstreet. The number is assigned and maintained
+by D&B. We do not sell numbers, create fictitious entities, fabricate
+registration documents, or bypass verification requirements.

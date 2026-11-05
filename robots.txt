@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+# 2 landing pages + 6 guides = 8 URLs in the sitemap.
+# build_pages.py regenerates the guides/ pages; keep this sitemap in sync.
 Sitemap: https://haoninggexia.github.io/D-U-N-S/sitemap.xml
