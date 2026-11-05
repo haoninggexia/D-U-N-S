@@ -26,15 +26,26 @@ Open `script.js` and edit the CONFIG block at the top:
 
 ```js
 const TELEGRAM_USERNAME = "haoninggexia";
-const CONTACT_EMAIL = "";   // e.g. "hello@example.com"
-const WECHAT_ID = "";       // e.g. "duns_helper"
-const QQ_NUMBER = "";       // e.g. "123456789"
+const CONTACT_EMAIL = "3085985620@qq.com";
+const WECHAT_ID = "18953147694";
+const QQ_NUMBER = "3085985620";
 ```
 
-Empty values are simply not rendered. **Add a WeChat ID or an email address if
-you want Chinese leads to convert** — Telegram alone loses most of them.
-The lead form also offers a "copy the message" button that works without any
-backend, so a static site can still capture enquiries.
+Empty values are simply not rendered. WeChat, QQ and email are now configured:
+the lead form shows a channel picker (WeChat / email / Telegram) after submit,
+so Chinese leads never get pushed to Telegram they cannot use. WeChat copies
+both the enquiry text and the WeChat ID; email opens a pre-filled `mailto:`;
+all channels carry the UTM source. No backend is required.
+
+## Payment methods
+
+`assets/pay-wechat.png` and `assets/pay-alipay.png` are tight QR crops with a
+white quiet zone; `assets/pay-*-full.jpg` are the full original posters used as
+"tap to zoom" targets. Both landing pages have a `#payment` section that says
+to confirm eligibility and the exact CNY amount **before** paying, and to send
+the payment screenshot plus company name to WeChat or email. The listed price
+is still USD 99 — do not change pricing without updating both pages and their
+`ProfessionalService` JSON-LD.
 
 ## Source attribution
 
@@ -76,6 +87,7 @@ python -m http.server 8000
 - `guides/*.html` — `FAQPage` + `BreadcrumbList` JSON-LD, internal cross-links.
 - `robots.txt`, `sitemap.xml` — 8 URLs, update `lastmod` when pages change.
 - `og-image.png` — 1200x630 share image.
+- `assets/pay-*.png` / `assets/pay-*-full.jpg` — WeChat Pay / Alipay QR codes.
 - Google site verification meta tag is already present in both landing pages.
 
 ### After every deploy

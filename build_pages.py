@@ -55,6 +55,7 @@ TEMPLATE = """<!DOCTYPE html>
         <a href="{{PREFIX}}{{HOME}}#compare">{{NAV_COMPARE}}</a>
         <a href="{{PREFIX}}{{HOME}}#guides">{{NAV_GUIDES}}</a>
         <a href="{{PREFIX}}{{HOME}}#pricing">{{NAV_PRICING}}</a>
+        <a href="{{PREFIX}}{{HOME}}#payment">{{NAV_PAYMENT}}</a>
         <a class="lang-switch" href="{{PREFIX}}{{ZH}}">{{NAV_LANG}}</a>
         <a class="nav-cta" href="{{CTA_LINK}}">{{NAV_CTA}}</a>
       </nav>
@@ -100,12 +101,15 @@ TEMPLATE = """<!DOCTYPE html>
       <div>
         <div class="brand">D&#8209;U&#8209;N&#8209;S<span>Helper</span></div>
         <p class="footer-note">Independent assistance service for D-U-N-S Number lookup and applications. Not affiliated with Dun &amp; Bradstreet, Apple or Google.</p>
-        <p class="footer-links"><a href="{{PREFIX}}{{HOME}}">Home</a> · <a href="{{PREFIX}}{{ZH}}">中文页面</a> · <a href="{{PREFIX}}{{HOME}}#compliance">Disclosure</a></p>
+        <p class="footer-links"><a href="{{PREFIX}}{{HOME}}">Home</a> · <a href="{{PREFIX}}{{ZH}}">中文页面</a> · <a href="{{PREFIX}}{{HOME}}#payment">付款方式 / Payment</a> · <a href="{{PREFIX}}{{HOME}}#compliance">Disclosure</a></p>
       </div>
       <div class="footer-contact">
         <p>Get in touch:</p>
         <a class="tg-link" href="https://t.me/haoninggexia" target="_blank" rel="noopener">t.me/haoninggexia</a>
         <p class="tg-phone-footer">+86 189 5314 7694 (Telegram)</p>
+        <p class="tg-phone-footer">微信 / WeChat: <strong>18953147694</strong></p>
+        <p class="tg-phone-footer">QQ: <strong>3085985620</strong></p>
+        <p class="tg-phone-footer">邮箱 / Email: <a href="mailto:3085985620@qq.com">3085985620@qq.com</a></p>
       </div>
     </div>
     <div class="container footer-bottom">
@@ -567,6 +571,7 @@ def render(p):
         "{{NAV_COMPARE}}": "时效对比" if zh else "Why us",
         "{{NAV_GUIDES}}": "专题指南" if zh else "Guides",
         "{{NAV_PRICING}}": "费用" if zh else "Pricing",
+        "{{NAV_PAYMENT}}": "付款方式" if zh else "Payment",
         "{{NAV_LANG}}": "English" if zh else "中文",
         "{{NAV_CTA}}": "免费预检" if zh else "Get started",
         "{{CRUMB_HOME}}": "首页" if zh else "Home",

@@ -47,6 +47,7 @@
       "contactType": "customer support",
       "url": "https://t.me/haoninggexia",
       "telephone": "+8618953147694",
+      "email": "3085985620@qq.com",
       "availableLanguage": ["Chinese", "English"]
     }
   }
@@ -61,7 +62,7 @@
       {"@type":"Question","name":"为什么能比官方快这么多？","acceptedAnswer":{"@type":"Answer","text":"多数已注册企业在邓白氏数据库中已有记录，往往在企业主不知情的情况下创建。官方等待时间中很大一部分用于重新核验一份本已存在的档案。我们先定位并核对正确档案；若确实需要新建记录，会先说明邓白氏的真实时效。"}},
       {"@type":"Question","name":"苹果开发者企业账号一定要 DUNS 编码吗？","acceptedAnswer":{"@type":"Answer","text":"是的。以组织身份加入 Apple Developer Program 必须提供为其法人实体注册的 D-U-N-S 编号，个人开发者不需要。DBA、商号、分公司不被接受。"}},
       {"@type":"Question","name":"你们是邓白氏官方吗？","acceptedAnswer":{"@type":"Answer","text":"不是。我们是独立第三方协助服务，与 Dun & Bradstreet、Apple、Google 均无隶属或合作关系。编码由邓白氏分配和维护。"}},
-      {"@type":"Question","name":"中国企业怎么联系？","acceptedAnswer":{"@type":"Answer","text":"可通过 Telegram @haoninggexia 联系；页面上方也提供一次性填写的咨询信息模板，复制后可用任意常用通讯方式发送，无需注册 Telegram。"}}
+      {"@type":"Question","name":"中国企业怎么联系？","acceptedAnswer":{"@type":"Answer","text":"微信 18953147694（也是手机号）、QQ 3085985620、邮箱 3085985620@qq.com，或 Telegram @haoninggexia。页面上方填写公司信息后，可选择微信、邮箱或 Telegram 发送咨询，无需注册 Telegram；付款方式见页面「付款方式」区块。"}}
     ]
   }
   </script>
@@ -75,6 +76,7 @@
         <a href="#how">服务流程</a>
         <a href="#guides">专题指南</a>
         <a href="#pricing">费用</a>
+        <a href="#payment">付款方式</a>
         <a href="#faq">常见问题</a>
         <a class="lang-switch" href="index.html">English</a>
         <a class="nav-cta" href="#contact">免费预检</a>
@@ -125,9 +127,19 @@
           <label>期望时间（选填）
             <input type="text" id="fDeadline" placeholder="例：本周内 / 11 月 10 日前" />
           </label>
-          <button type="submit" class="btn btn-tg">通过 Telegram 发送 &rarr;</button>
-          <button type="button" id="copyLead" class="btn btn-copy">不方便用 Telegram？复制咨询信息</button>
+          <button type="submit" class="btn btn-tg">填好了，下一步 &rarr;</button>
+          <button type="button" id="copyLead" class="btn btn-copy">复制咨询信息</button>
         </form>
+
+        <div id="sendOptions" class="send-options" hidden>
+          <p class="send-title">选择发送方式（不用注册 Telegram）</p>
+          <div class="send-row">
+            <button type="button" class="send-btn send-wechat" id="sendWechat">微信发送</button>
+            <a class="send-btn" id="sendMail" href="mailto:3085985620@qq.com">邮件发送</a>
+            <a class="send-btn" id="sendTg" href="https://t.me/haoninggexia" target="_blank" rel="noopener">Telegram</a>
+          </div>
+          <p class="send-hint" id="sendHint"></p>
+        </div>
         <p class="tg-phone">Telegram：<strong>@haoninggexia</strong> · +86 189 5314 7694</p>
         <div id="extraContacts" class="extra-contacts"></div>
         <div class="qr-wrap">
@@ -215,8 +227,32 @@
           <li>&#10003; Telegram 人工支持，中文 / English</li>
         </ul>
         <a class="btn btn-primary" href="#contact">开始 &mdash; $99</a>
+        <p class="price-footnote"><a href="#payment">看付款方式 &darr;</a></p>
       </div>
       <p class="table-note center">邓白氏编码本身由 Dun &amp; Bradstreet 免费发放。我们收取的是检索、核对、协助与支持的服务费用。</p>
+    </div>
+  </section>
+
+  <!-- 付款方式 -->
+  <section class="section section-pay" id="payment">
+    <div class="container">
+      <h2 class="section-title">付款方式</h2>
+      <p class="section-intro">支持微信支付、支付宝。可直接扫码，也可点二维码查看大图。<strong>请先联系我们确认可行性与金额，再付款</strong>，不要直接转账。</p>
+      <div class="pay-grid">
+        <figure class="pay-card">
+          <span class="pay-badge pay-wechat">微信支付</span>
+          <a href="assets/pay-wechat-full.jpg" target="_blank" rel="noopener"><img src="assets/pay-wechat.png" alt="微信收款二维码" loading="lazy" /></a>
+          <figcaption><strong>微信扫码付款</strong><br />或加微信 <strong>18953147694</strong> 先咨询</figcaption>
+          <a class="pay-zoom" href="assets/pay-wechat-full.jpg" target="_blank" rel="noopener">点击查看大图 &nearr;</a>
+        </figure>
+        <figure class="pay-card">
+          <span class="pay-badge pay-alipay">支付宝</span>
+          <a href="assets/pay-alipay-full.jpg" target="_blank" rel="noopener"><img src="assets/pay-alipay.png" alt="支付宝收款二维码" loading="lazy" /></a>
+          <figcaption><strong>支付宝扫码付款</strong><br />付款后请保留截图</figcaption>
+          <a class="pay-zoom" href="assets/pay-alipay-full.jpg" target="_blank" rel="noopener">点击查看大图 &nearr;</a>
+        </figure>
+      </div>
+      <p class="pay-note">标价 $99 USD 为一次性服务费，人民币金额按沟通时确认的汇率折算。付款前请先加微信 18953147694 或发邮件到 3085985620@qq.com 确认金额；付款后把截图与公司名称发给我们核对。海外客户可通过 Telegram 沟通其他方式。<br />本服务为独立第三方协助，与邓白氏、Apple、Google 无隶属关系；邓白氏编码本身由 Dun &amp; Bradstreet 免费发放。</p>
     </div>
   </section>
 
@@ -229,7 +265,7 @@
         <details><summary>为什么能比官方快这么多？</summary><p>多数已注册企业在邓白氏数据库中已有记录，往往在企业主不知情的情况下创建。官方等待时间中很大一部分用于重新核验一份本已存在的档案。我们先定位并核对正确档案；若确实需要新建记录，会先说明邓白氏的真实时效。</p></details>
         <details><summary>苹果开发者企业账号一定要 DUNS 编码吗？</summary><p>是的。以组织身份加入 Apple Developer Program 必须提供为其法人实体注册的 D-U-N-S 编号，个人开发者不需要。DBA、商号、分公司不被接受。</p></details>
         <details><summary>你们是邓白氏官方吗？</summary><p>不是。我们是独立第三方协助服务，与 Dun &amp; Bradstreet、Apple、Google 均无隶属或合作关系。编码由邓白氏分配和维护。</p></details>
-        <details><summary>中国企业怎么联系？</summary><p>可通过 Telegram @haoninggexia 联系；页面上方也提供一次性填写的咨询信息模板，复制后可用任意常用通讯方式发送，无需注册 Telegram。</p></details>
+        <details><summary>中国企业怎么联系？</summary><p>微信 18953147694（也是手机号）、QQ 3085985620、邮箱 3085985620@qq.com，或 Telegram @haoninggexia。页面上方填写公司信息后，可选择微信、邮箱或 Telegram 发送咨询，无需注册 Telegram；付款方式见页面「付款方式」区块。</p></details>
       </div>
     </div>
   </section>
@@ -249,12 +285,15 @@
       <div>
         <div class="brand">D&#8209;U&#8209;N&#8209;S<span>Helper</span></div>
         <p class="footer-note">独立第三方邓白氏编码检索与申请协助服务，与 Dun &amp; Bradstreet 无隶属关系。</p>
-        <p class="footer-links"><a href="index.html">English</a> · <a href="guides/duns-bianhao-jiaji.html">加急时效指南</a> · <a href="guides/pingguo-kaifazhe-duns.html">苹果驳回排查</a> · <a href="#compliance">声明</a></p>
+        <p class="footer-links"><a href="index.html">English</a> · <a href="#payment">付款方式</a> · <a href="guides/duns-bianhao-jiaji.html">加急时效指南</a> · <a href="guides/pingguo-kaifazhe-duns.html">苹果驳回排查</a> · <a href="#compliance">声明</a></p>
       </div>
       <div class="footer-contact">
         <p>联系方式：</p>
         <a class="tg-link" href="https://t.me/haoninggexia" target="_blank" rel="noopener">t.me/haoninggexia</a>
         <p class="tg-phone-footer">+86 189 5314 7694 (Telegram)</p>
+        <p class="tg-phone-footer">微信 / WeChat: <strong>18953147694</strong></p>
+        <p class="tg-phone-footer">QQ: <strong>3085985620</strong></p>
+        <p class="tg-phone-footer">邮箱 / Email: <a href="mailto:3085985620@qq.com">3085985620@qq.com</a></p>
       </div>
     </div>
     <div class="container footer-bottom">

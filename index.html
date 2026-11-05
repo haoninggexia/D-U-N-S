@@ -55,6 +55,7 @@
       "contactType": "customer support",
       "url": "https://t.me/haoninggexia",
       "telephone": "+8618953147694",
+      "email": "3085985620@qq.com",
       "availableLanguage": ["English", "Chinese"]
     },
     "offers": {
@@ -113,7 +114,7 @@
       {
         "@type": "Question",
         "name": "中国企业怎么联系你们？",
-        "acceptedAnswer": { "@type": "Answer", "text": "可通过 Telegram @haoninggexia 联系；页面下方也提供一次性填写的咨询信息模板，复制后可用任意常用通讯方式发送。" }
+        "acceptedAnswer": { "@type": "Answer", "text": "微信 18953147694（也是手机号）、QQ 3085985620、邮箱 3085985620@qq.com，或 Telegram @haoninggexia。页面上方填写公司信息后，可选择微信、邮箱或 Telegram 发送咨询，无需注册 Telegram；付款方式见页面「付款方式」区块。" }
       }
     ]
   }
@@ -128,6 +129,7 @@
         <a href="#how">How it works</a>
         <a href="#guides">Guides</a>
         <a href="#pricing">Pricing</a>
+        <a href="#payment">Payment</a>
         <a href="#faq">FAQ</a>
         <a class="lang-switch" href="zh.html">中文</a>
         <a class="nav-cta" href="#contact">Get started</a>
@@ -179,9 +181,19 @@
           <label>Deadline (optional)
             <input type="text" id="fDeadline" placeholder="e.g. this week / 10 Nov" />
           </label>
-          <button type="submit" class="btn btn-tg">Send on Telegram &rarr;</button>
+          <button type="submit" class="btn btn-tg">Continue to send &rarr;</button>
           <button type="button" id="copyLead" class="btn btn-copy">Copy the message instead</button>
         </form>
+
+        <div id="sendOptions" class="send-options" hidden>
+          <p class="send-title">Choose how to send your enquiry</p>
+          <div class="send-row">
+            <button type="button" class="send-btn send-wechat" id="sendWechat">微信 / WeChat</button>
+            <a class="send-btn" id="sendMail" href="mailto:3085985620@qq.com">邮箱 / Email</a>
+            <a class="send-btn" id="sendTg" href="https://t.me/haoninggexia" target="_blank" rel="noopener">Telegram</a>
+          </div>
+          <p class="send-hint" id="sendHint"></p>
+        </div>
 
         <p class="tg-phone">Telegram: <strong>@haoninggexia</strong> · +86 189 5314 7694</p>
         <div id="extraContacts" class="extra-contacts"></div>
@@ -304,8 +316,32 @@
           <li>&#10003; Support via Telegram, EN / 中文</li>
         </ul>
         <a class="btn btn-primary" href="#contact">Get started &mdash; $99</a>
+        <p class="price-footnote"><a href="#payment">付款方式 / Payment methods &darr;</a></p>
       </div>
       <p class="table-note center">The D-U-N-S Number itself is issued free of charge by Dun &amp; Bradstreet. Our fee covers the lookup, verification, assistance and support.</p>
+    </div>
+  </section>
+
+  <!-- 付款方式：中国客户可用微信 / 支付宝 -->
+  <section class="section section-pay" id="payment">
+    <div class="container">
+      <h2 class="section-title">Payment methods</h2>
+      <p class="section-intro">Chinese customers can pay with WeChat Pay or Alipay. Scan the QR code, or tap the image to open it full size. <strong>Please contact us first</strong> — eligibility and the exact amount are confirmed before any payment.</p>
+      <div class="pay-grid">
+        <figure class="pay-card">
+          <span class="pay-badge pay-wechat">微信支付 WeChat Pay</span>
+          <a href="assets/pay-wechat-full.jpg" target="_blank" rel="noopener"><img src="assets/pay-wechat.png" alt="微信收款二维码 / WeChat Pay QR code" loading="lazy" /></a>
+          <figcaption><strong>微信扫码付款</strong><br />或加微信 <strong>18953147694</strong> 咨询</figcaption>
+          <a class="pay-zoom" href="assets/pay-wechat-full.jpg" target="_blank" rel="noopener">点击查看大图 &nearr;</a>
+        </figure>
+        <figure class="pay-card">
+          <span class="pay-badge pay-alipay">支付宝 Alipay</span>
+          <a href="assets/pay-alipay-full.jpg" target="_blank" rel="noopener"><img src="assets/pay-alipay.png" alt="支付宝收款二维码 / Alipay QR code" loading="lazy" /></a>
+          <figcaption><strong>支付宝扫码付款</strong><br />付款后请保留截图</figcaption>
+          <a class="pay-zoom" href="assets/pay-alipay-full.jpg" target="_blank" rel="noopener">点击查看大图 &nearr;</a>
+        </figure>
+      </div>
+      <p class="pay-note">标价 $99 USD 为一次性服务费。人民币金额按沟通时确认的汇率折算，<strong>请先联系我们确认金额再付款</strong>；付款后把截图与公司名称发到微信 18953147694 或邮箱 3085985620@qq.com，我们会核对并回复。海外客户可通过 Telegram 沟通其他付款方式。<br />We are an independent third party, not affiliated with D&amp;B, Apple or Google. The D-U-N-S Number itself is issued free of charge by Dun &amp; Bradstreet.</p>
     </div>
   </section>
 
@@ -321,7 +357,7 @@
         <details><summary>Are you affiliated with Dun &amp; Bradstreet or Apple?</summary><p>No. We are an independent third-party assistance service. We are not affiliated with, endorsed by, or acting on behalf of Dun &amp; Bradstreet, Apple, or Google. The number is assigned and maintained by D&amp;B.</p></details>
         <details lang="zh-CN"><summary>邓白氏编码（DUNS）是免费的吗？</summary><p>是的，邓白氏（Dun &amp; Bradstreet）官方发放的标准 DUNS 编码本身免费。我们收取的是检索、核对、申请协助与售后支持的费用，不是出售编码。</p></details>
         <details lang="zh-CN"><summary>申请邓白氏编码需要多久？</summary><p>官方标准通道最长约 30 个工作日，官方付费加急仍需约 8 个工作日，苹果开发者通道通常 3–5 个工作日。很多企业其实已有编码，可在几分钟内检索确认。我们会在开始前先核实您的企业情况并告知真实时效。</p></details>
-        <details lang="zh-CN"><summary>中国企业怎么联系你们？</summary><p>可通过 Telegram @haoninggexia 联系；页面上方也提供一次性填写的咨询信息模板，复制后可用任意常用通讯方式发送。</p></details>
+        <details lang="zh-CN"><summary>中国企业怎么联系你们？</summary><p>微信 18953147694（也是手机号）、QQ 3085985620、邮箱 3085985620@qq.com，或 Telegram @haoninggexia。页面上方填写公司信息后，可选择微信、邮箱或 Telegram 发送咨询，无需注册 Telegram；付款方式见页面「付款方式」区块。</p></details>
       </div>
     </div>
   </section>
@@ -341,12 +377,15 @@
       <div>
         <div class="brand">D&#8209;U&#8209;N&#8209;S<span>Helper</span></div>
         <p class="footer-note">Independent assistance service for D-U-N-S Number lookup and applications. Not affiliated with Dun &amp; Bradstreet.</p>
-        <p class="footer-links"><a href="zh.html">中文页面</a> · <a href="guides/apple-developer-duns.html">Apple Developer guide</a> · <a href="guides/duns-number-fast.html">Fast-track guide</a> · <a href="guides/duns-bianhao-jiaji.html">邓白氏加急指南</a></p>
+        <p class="footer-links"><a href="zh.html">中文页面</a> · <a href="#payment">付款方式</a> · <a href="guides/apple-developer-duns.html">Apple Developer guide</a> · <a href="guides/duns-number-fast.html">Fast-track guide</a> · <a href="guides/duns-bianhao-jiaji.html">邓白氏加急指南</a></p>
       </div>
       <div class="footer-contact">
         <p>Get in touch:</p>
         <a class="tg-link" href="https://t.me/haoninggexia" target="_blank" rel="noopener">t.me/haoninggexia</a>
         <p class="tg-phone-footer">+86 189 5314 7694 (Telegram)</p>
+        <p class="tg-phone-footer">微信 / WeChat: <strong>18953147694</strong></p>
+        <p class="tg-phone-footer">QQ: <strong>3085985620</strong></p>
+        <p class="tg-phone-footer">邮箱 / Email: <a href="mailto:3085985620@qq.com">3085985620@qq.com</a></p>
       </div>
     </div>
     <div class="container footer-bottom">
